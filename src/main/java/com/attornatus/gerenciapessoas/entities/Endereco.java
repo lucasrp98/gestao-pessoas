@@ -19,6 +19,9 @@ public class Endereco {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String rua;
+	private Long cep;
+	private String cidade;
+	private Long num_casa;
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
@@ -51,4 +54,27 @@ public class Endereco {
 		this.user = user;
 	}
 
+	public Long getCep() {
+		return cep;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCep(Long cep) {
+		this.cep = cep;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public Long getNum_casa() {
+		return num_casa;
+	}
+
+	public void setNum_casa(Long num_casa) {
+		this.num_casa = num_casa;
+	}
 }
